@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Pagination from "./Pagination";
 
 class SearchBrewery extends Component {
   state = {

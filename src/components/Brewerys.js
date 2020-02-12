@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Brewery from "./Brewery";
 import SearchBrewery from "./SearchBrewery";
+import Pagination from './Pagination';
 
 //my key api
 var myKey = "a5a1e63036b53d65b4ff10eb7cd8e58c";
@@ -16,7 +17,7 @@ class Brewerys extends Component {
       pagination: {
         total: 0,
         currentPage: 1,
-        itemsPerPage: 5
+        itemsPerPage: 15
       }
     };
   }
@@ -64,11 +65,13 @@ class Brewerys extends Component {
         <div>
           <SearchBrewery onSearch={this.performSearch} />
 
+
           {this.state.loading ? <p>Loading</p> : null}
 
           {this.state.brewerys.map(brewery => (
             <Brewery key={brewery.id} brewery={brewery} />
           ))}
+
         </div>
       );
     } else {

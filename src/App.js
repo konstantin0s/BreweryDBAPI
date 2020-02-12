@@ -80,13 +80,18 @@ class App extends Component {
           />
 
           <Switch>
+
+    
             <Route exact path="/location" component={Brewerys} />
+
+      
 
             <div>
               {this.state.brewerys.map(beers => {
                 return <Beers key={beers.id} beers={beers} />;
               })}
             </div>
+
           </Switch>
 
           <Pagination
