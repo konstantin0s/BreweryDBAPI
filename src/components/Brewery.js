@@ -1,21 +1,36 @@
-import React from 'react';
+import React from "react";
 
+function Brewery(props) {
+  return (
+    <div>
+      <ul>
+        <li key={props.brewery.id}>
+          <h2>
+            Name:
+            {props.brewery.name ? props.brewery.name : "No name available"}
+          </h2>
+          <h3>
+            City:
+            {props.brewery.locality
+              ? props.brewery.locality
+              : "No Locality available"}
+          </h3>
 
- function Brewery(props) {
-
-    return (
-        <div>
-                               <li key={props.brewery.id}>
-{/* <img src={props.gif.images.downsized.url} /> */}
-                <h3>Name: 
-                {props.brewery.name ? props.brewery.name : 'No name available'}
-                </h3>
-                {/* <h5>Type: {props.brewery.description}</h5> */}
-                {/* <p>{props.brewery.ingredients}</p> */}
-                    </li>
-        </div>
-    )
+          <h4>
+            Type:
+            {props.brewery.locationType
+              ? props.brewery.locationType
+              : "No type"}
+          </h4>
+          <p>
+            Region:
+            {props.brewery.region ? props.brewery.region : "Without region"}
+          </p>
+        </li>
+      </ul>
+      ;
+    </div>
+  );
 }
-
 
 export default Brewery;
