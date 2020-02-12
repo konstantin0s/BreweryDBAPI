@@ -17,7 +17,7 @@ function Header() {
 
       <div className="footer-bottom">
      
-          <p className="pull-left"> 2020 Copyright © Beers </p>
+          <p className="text-center"> 2020 Copyright © Beers </p>
        
       </div>
     </div>

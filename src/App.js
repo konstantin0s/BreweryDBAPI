@@ -6,8 +6,9 @@ import Beers from "./components/Beers";
 import "./App.css";
 import axios from "axios";
 import Pagination from "./components/Pagination";
+require('dotenv')
 
-var myKey = "a5a1e63036b53d65b4ff10eb7cd8e58c";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 class App extends Component {
   constructor(props) {
@@ -24,12 +25,12 @@ class App extends Component {
     };
   }
 
-  performSearch = (query = "alabama") => {
+  performSearch = () => {
     this.setState(state => ({ ...state, isLoading: true }));
 
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/beers/?key=${myKey}&page=${this.state.pagination.currentPage}`
+        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/beers/?key=${API_KEY}&page=${this.state.pagination.currentPage}`
       )
       .then(res => {
         const brewerys = res.data.data;

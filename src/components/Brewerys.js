@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import Brewery from "./Brewery";
 import SearchBrewery from "./SearchBrewery";
-import Pagination from './Pagination';
+require('dotenv')
 
-//my key api
-var myKey = "a5a1e63036b53d65b4ff10eb7cd8e58c";
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 class Brewerys extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Brewerys extends Component {
 
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/locations/?key=${myKey}&country=us&locality=${query}&sort=asc`
+        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/locations/?key=${API_KEY}&country=us&locality=${query}&sort=asc`
       )
       .then(res => {
         const brewerys = res.data.data;
