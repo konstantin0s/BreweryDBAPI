@@ -1,3 +1,30 @@
+Description of the decisions made to accomplish the assignment:
+
+
+
+Framework chosen: React.Js.
+
+Basically I have used react components to render data retrieved from api because I wanted to have the project structured in different files and not all in one file and react does help with this.
+
+I have added a header where I  provided two links: one that renders a list of beers and the second that renders a list of beers available by location(here is the search by location).
+
+
+In List of brewerys (Brewerys.js) component I have added 
+the main api call to search by location. I used a function to call the the api and store it's result in state. After I check if the data is stored in the state, I display SearchBrewery component file (it's shown only when you are on 'By location' page . In the state I have restricted the api call, and by having less calls, I've managed to work with a limited api requests. The whole search by location is focused on US country.
+
+Further, in the same file(Brewerys.js), I have mapped the state  and passed the data to it's child component(Brewery.js) where I have used a functional component to display only a few details such as, name, city, type, region.
+
+
+ In the main file App.js, I have added the Header.js, Beers.js, Brewerys.js components and where I've used them and to render the page based on link selected in the Header. Here, I make a second call to the api, to ask only for a list of beers(no search included here). After the api response, data is stored in App.js state and the props are passed down it's child(Beers.js) where I display a list of names of beers.
+
+To call the api, I've used axios.
+
+Of course, I have added a little bit of css style to make it look like a website. 
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
