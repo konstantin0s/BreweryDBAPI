@@ -2,7 +2,7 @@ Description of the decisions made to accomplish the assignment:
 
 
 
-Framework chosen: React.Js.
+Framework chosen: React.Js, Bootstrap & FontAwesome
 
 Basically I have used react components to render data retrieved from api because I wanted to have the project structured in different files and not all in one file and react does help with this.
 
