@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Pagination from "./Pagination";
 
 class SearchBrewery extends Component {
   state = {
@@ -22,15 +23,22 @@ class SearchBrewery extends Component {
     return (
       <div>
         <form className="search-form" onSubmit={this.handleSubmit}>
-          <input
-            type="search"
-            onChange={this.onSearchChange}
-            name="search"
-            ref={input => (this.query = input)}
-            placeholder="Search By City"
-          />
-          <button className="search-btn" type="submit" id="submit">
-            <i className="fa fa-fw fa-search"></i>
+          <div className="active-cyan-3 active-cyan-4 mb-4 mt-4">
+            <input
+              className="form-control"
+              onChange={this.onSearchChange}
+              type="search"
+              ref={input => (this.query = input)}
+              placeholder="Search By City (in US)"
+              aria-label="Search"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="submit"
+            className="input-group-text cyan lighten-2">
+            <i className="fa fa-fw fa-search text-dark" aria-hidden="true"></i>
           </button>
         </form>
       </div>
