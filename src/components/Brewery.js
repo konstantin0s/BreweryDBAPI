@@ -1,6 +1,6 @@
 import React from "react";
 
-function Brewery(props) {
+const Brewery = (props) => {
   return (
     <div className="container">
       <ul className="ulist">

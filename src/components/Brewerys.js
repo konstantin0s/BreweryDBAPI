@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Brewery from "./Brewery";
 import SearchBrewery from "./SearchBrewery";
-require('dotenv')
+require('dotenv');
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
