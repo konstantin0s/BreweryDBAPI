@@ -1,5 +1,9 @@
 Description of the decisions made to accomplish the assignment:
 
+As a user, I am interested in finding a list of breweries.
+As a user, I would like to see that list of beers by name. 
+As a user, I would like to search by city/town.
+As a user, I would like to see information like type, name or something else.
 
 
 Framework chosen: React.Js, Bootstrap & FontAwesome
