@@ -22,7 +22,7 @@ To call the api, I've used axios.
 Of course, I have added a little bit of css style to make it look like a website. 
 
 
-
+.env file (with api key variable) needs to be added in the root project.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
