@@ -22,7 +22,7 @@ the main api call to search by location. I used a function to call the the api a
 Further, in the same file(Brewerys.js), I have mapped the state  and passed the data to it's child component(Brewery.js) where I have used a functional component to display only a few details such as, name, city, type, region.
 
 
- In the main file App.js, I have added the Header.js, Beers.js, Brewerys.js components and where I've used them and to render the page based on link selected in the Header. Here, I make a second call to the api, to ask only for a list of beers(no search included here). After the api response, data is stored in App.js state and the props are passed down it's child(Beers.js) where I display a list of names of beers.
+ In the main file App.js, I have added the Header.js, Beers.js, Brewerys.js components and where I've used them and to render the page based on link selected in the Header. Here, I make a second call to the api, where I search for names of beers from the whole list. After the api response, data is stored in Beers.js state and the props are passed down it's child(Beer.js) where I display a list of names of beers.
 
 To call the api, I've used axios.
 
