@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Brewery from "./Brewery";
 import SearchBrewery from "./SearchBrewery";
+import Pagination from './Pagination';
+import axios from "axios";
 require('dotenv');
 
 
@@ -27,13 +28,13 @@ class Brewerys extends Component {
 
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/locations/?key=${API_KEY}&country=us&locality=${query}&sort=asc`
+        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/locations/?key=${API_KEY}&country=us&locality=${query}&sort=asc`
       )
       .then(res => {
         const brewerys = res.data.data;
         this.setState({
           brewerys: brewerys,
-          loading: false,
+          isLoading: false,
           pagination: {
             currentPage: res.data.currentPage,
             itemsPerPage: this.state.pagination.itemsPerPage,
@@ -59,18 +60,35 @@ class Brewerys extends Component {
   };
 
   render() {
+
     console.log(this.state.brewerys);
     if (!this.state.brewerys == "" || !this.state.brewerys == "undefined") {
       return (
-        <div>
+        <div className="byCity">
           <SearchBrewery onSearch={this.performSearch} />
 
+          <Pagination
+            className={this.state.isLoading ? " hidden" : ""}
+            total={this.state.pagination.total}
+            current={this.state.pagination.currentPage}
+            onChange={this.paginate}
+            pageSize={this.state.pagination.itemsPerPage}
+          />
 
-          {this.state.loading ? <p>Loading</p> : null}
+
+          {this.state.isLoading ? <p>Loading</p> : null}
 
           {this.state.brewerys.map(brewery => (
             <Brewery key={brewery.id} brewery={brewery} />
           ))}
+
+<Pagination
+            className={this.state.isLoading ? " hidden" : ""}
+            total={this.state.pagination.total}
+            current={this.state.pagination.currentPage}
+            onChange={this.paginate}
+            pageSize={this.state.pagination.itemsPerPage}
+          />
 
         </div>
       );
@@ -79,11 +97,14 @@ class Brewerys extends Component {
         <div>
           <SearchBrewery onSearch={this.performSearch} />
 
+
           <p>Loading...</p>
+
         </div>
       );
     }
   }
+
 }
 
 export default Brewerys;

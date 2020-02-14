@@ -6,12 +6,16 @@ const Header =() => {
     <div>
       <header className="header" style={headerStyle}>
         <h1>HouseOfBeer</h1>
+
         <Link className="link" style={linkStyle} to="/">
-          Beers
+        {" "} Home |{" "}
+        </Link>
+        <Link className="link" style={linkStyle} to="/beers">
+        |{" "}    By Name
         </Link>{" "}
-        |{" "}
+        
         <Link style={linkStyle} className="link" to="/location">
-          By location
+        |{" "}     By location |{" "}
         </Link>
       </header>
 

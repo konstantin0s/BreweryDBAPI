@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class SearchBrewery extends Component {
   state = {
     searchText: ""
@@ -28,7 +29,7 @@ class SearchBrewery extends Component {
               onChange={this.onSearchChange}
               type="search"
               ref={input => (this.query = input)}
-              placeholder="Search By City (in US)"
+              placeholder="Search By Name"
               aria-label="Search"
             />
           </div>

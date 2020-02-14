@@ -6,6 +6,7 @@ import Beers from "./components/Beers";
 import "./App.css";
 import axios from "axios";
 import Pagination from "./components/Pagination";
+// import SearchByName from './components/SearchByName';
 require('dotenv')
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -16,6 +17,7 @@ class App extends Component {
 
     this.state = {
       brewerys: [],
+      searchText: [],
       isLoading: true,
       pagination: {
         total: 0,
@@ -25,12 +27,12 @@ class App extends Component {
     };
   }
 
-  performSearch = () => {
+  performSearch = (query) => {
     this.setState(state => ({ ...state, isLoading: true }));
 
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/beers/?key=${API_KEY}&page=${this.state.pagination.currentPage}`
+        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beers/?key=${API_KEY}&by_name=${query}&page=${this.state.pagination.currentPage}`
       )
       .then(res => {
         const brewerys = res.data.data;
@@ -43,14 +45,23 @@ class App extends Component {
             total: res.data.totalResults
           }
         });
+
+        localStorage.setItem(
+          `${query}`,
+          JSON.stringify(this.state.brewerys) )
+
       })
       .catch(err => console.log(err));
+
+   
   };
 
-  componentDidMount = () => {
-    this.performSearch();
-  };
+  // componentDidMount = () => {
+  //   this.performSearch();
+  // };
 
+
+  
   paginate = (page, itemsPerPage) => {
     this.setState(
       state => {
@@ -66,42 +77,23 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.brewerys);
+
     return (
       <Router>
         <div className="the-app">
           <Header />
 
-          <Pagination
-            className={this.state.isLoading ? " hidden" : ""}
-            total={this.state.pagination.total}
-            current={this.state.pagination.currentPage}
-            onChange={this.paginate}
-            pageSize={this.state.pagination.itemsPerPage}
-          />
-
           <Switch>
 
-    
+    <Route exact path="/" />
+
+            <Route exact path="/beers" component={Beers} />
+
             <Route exact path="/location" component={Brewerys} />
 
-      
-
-            <div>
-              {this.state.brewerys.map(beers => {
-                return <Beers key={beers.id} beers={beers} />;
-              })}
-            </div>
-
+    
           </Switch>
 
-          <Pagination
-            className={this.state.isLoading ? " hidden" : ""}
-            total={this.state.pagination.total}
-            current={this.state.pagination.currentPage}
-            onChange={this.paginate}
-            pageSize={this.state.pagination.itemsPerPage}
-          />
         </div>
       </Router>
     );
