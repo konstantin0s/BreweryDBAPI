@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/BreweryDBAPI/brewerys/static/css/main.3bf1cccd.chunk.css",
-    "main.js": "/BreweryDBAPI/brewerys/static/js/main.51f6b377.chunk.js",
-    "main.js.map": "/BreweryDBAPI/brewerys/static/js/main.51f6b377.chunk.js.map",
-    "runtime-main.js": "/BreweryDBAPI/brewerys/static/js/runtime-main.35fc773f.js",
-    "runtime-main.js.map": "/BreweryDBAPI/brewerys/static/js/runtime-main.35fc773f.js.map",
-    "static/js/2.097cf789.chunk.js": "/BreweryDBAPI/brewerys/static/js/2.097cf789.chunk.js",
-    "static/js/2.097cf789.chunk.js.map": "/BreweryDBAPI/brewerys/static/js/2.097cf789.chunk.js.map",
-    "index.html": "/BreweryDBAPI/brewerys/index.html",
-    "precache-manifest.d9823e5673de30a0ac41099ed98de178.js": "/BreweryDBAPI/brewerys/precache-manifest.d9823e5673de30a0ac41099ed98de178.js",
-    "service-worker.js": "/BreweryDBAPI/brewerys/service-worker.js",
-    "static/css/main.3bf1cccd.chunk.css.map": "/BreweryDBAPI/brewerys/static/css/main.3bf1cccd.chunk.css.map",
-    "static/js/2.097cf789.chunk.js.LICENSE.txt": "/BreweryDBAPI/brewerys/static/js/2.097cf789.chunk.js.LICENSE.txt"
+    "main.css": "/BreweryDBAPI/beers/static/css/main.3bf1cccd.chunk.css",
+    "main.js": "/BreweryDBAPI/beers/static/js/main.4c6b32bd.chunk.js",
+    "main.js.map": "/BreweryDBAPI/beers/static/js/main.4c6b32bd.chunk.js.map",
+    "runtime-main.js": "/BreweryDBAPI/beers/static/js/runtime-main.c52f826c.js",
+    "runtime-main.js.map": "/BreweryDBAPI/beers/static/js/runtime-main.c52f826c.js.map",
+    "static/js/2.b15d9d01.chunk.js": "/BreweryDBAPI/beers/static/js/2.b15d9d01.chunk.js",
+    "static/js/2.b15d9d01.chunk.js.map": "/BreweryDBAPI/beers/static/js/2.b15d9d01.chunk.js.map",
+    "index.html": "/BreweryDBAPI/beers/index.html",
+    "precache-manifest.0c78f2e3d9085e0fcfe63ad5c5f45848.js": "/BreweryDBAPI/beers/precache-manifest.0c78f2e3d9085e0fcfe63ad5c5f45848.js",
+    "service-worker.js": "/BreweryDBAPI/beers/service-worker.js",
+    "static/css/main.3bf1cccd.chunk.css.map": "/BreweryDBAPI/beers/static/css/main.3bf1cccd.chunk.css.map",
+    "static/js/2.b15d9d01.chunk.js.LICENSE.txt": "/BreweryDBAPI/beers/static/js/2.b15d9d01.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.35fc773f.js",
-    "static/js/2.097cf789.chunk.js",
+    "static/js/runtime-main.c52f826c.js",
+    "static/js/2.b15d9d01.chunk.js",
     "static/css/main.3bf1cccd.chunk.css",
-    "static/js/main.51f6b377.chunk.js"
+    "static/js/main.4c6b32bd.chunk.js"
   ]
 }
