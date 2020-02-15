@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/BreweryDBAPI/beers/static/css/main.3bf1cccd.chunk.css",
-    "main.js": "/BreweryDBAPI/beers/static/js/main.4c6b32bd.chunk.js",
-    "main.js.map": "/BreweryDBAPI/beers/static/js/main.4c6b32bd.chunk.js.map",
-    "runtime-main.js": "/BreweryDBAPI/beers/static/js/runtime-main.c52f826c.js",
-    "runtime-main.js.map": "/BreweryDBAPI/beers/static/js/runtime-main.c52f826c.js.map",
-    "static/js/2.b15d9d01.chunk.js": "/BreweryDBAPI/beers/static/js/2.b15d9d01.chunk.js",
-    "static/js/2.b15d9d01.chunk.js.map": "/BreweryDBAPI/beers/static/js/2.b15d9d01.chunk.js.map",
-    "index.html": "/BreweryDBAPI/beers/index.html",
-    "precache-manifest.0c78f2e3d9085e0fcfe63ad5c5f45848.js": "/BreweryDBAPI/beers/precache-manifest.0c78f2e3d9085e0fcfe63ad5c5f45848.js",
-    "service-worker.js": "/BreweryDBAPI/beers/service-worker.js",
-    "static/css/main.3bf1cccd.chunk.css.map": "/BreweryDBAPI/beers/static/css/main.3bf1cccd.chunk.css.map",
-    "static/js/2.b15d9d01.chunk.js.LICENSE.txt": "/BreweryDBAPI/beers/static/js/2.b15d9d01.chunk.js.LICENSE.txt"
+    "main.css": "/brewerydb-api/static/css/main.3bf1cccd.chunk.css",
+    "main.js": "/brewerydb-api/static/js/main.85f62f0d.chunk.js",
+    "main.js.map": "/brewerydb-api/static/js/main.85f62f0d.chunk.js.map",
+    "runtime-main.js": "/brewerydb-api/static/js/runtime-main.6afe48aa.js",
+    "runtime-main.js.map": "/brewerydb-api/static/js/runtime-main.6afe48aa.js.map",
+    "static/js/2.a9e48120.chunk.js": "/brewerydb-api/static/js/2.a9e48120.chunk.js",
+    "static/js/2.a9e48120.chunk.js.map": "/brewerydb-api/static/js/2.a9e48120.chunk.js.map",
+    "index.html": "/brewerydb-api/index.html",
+    "precache-manifest.a4b5a08948f35084fdfbbd966870e5c2.js": "/brewerydb-api/precache-manifest.a4b5a08948f35084fdfbbd966870e5c2.js",
+    "service-worker.js": "/brewerydb-api/service-worker.js",
+    "static/css/main.3bf1cccd.chunk.css.map": "/brewerydb-api/static/css/main.3bf1cccd.chunk.css.map",
+    "static/js/2.a9e48120.chunk.js.LICENSE.txt": "/brewerydb-api/static/js/2.a9e48120.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c52f826c.js",
-    "static/js/2.b15d9d01.chunk.js",
+    "static/js/runtime-main.6afe48aa.js",
+    "static/js/2.a9e48120.chunk.js",
     "static/css/main.3bf1cccd.chunk.css",
-    "static/js/main.4c6b32bd.chunk.js"
+    "static/js/main.85f62f0d.chunk.js"
   ]
 }
