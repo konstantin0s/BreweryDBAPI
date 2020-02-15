@@ -2,7 +2,7 @@
   "name": "brewerydbapi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://konstantin0s.github.io/BreweryDBAPI",
+  "homepage": "https://konstantin0s.github.io/BreweryDBAPI/brewerys",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
