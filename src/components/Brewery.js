@@ -7,8 +7,8 @@ const Brewery = (props) => {
         <li className="list-item"
          key={props.brewery.id}>
           <h2>
-            Name: {' '}
-            {props.brewery.name ? props.brewery.name : "No name available"}
+            Beer: {' '}
+            {props.brewery.brewery.nameShortDisplay ? props.brewery.brewery.nameShortDisplay : "No name available"}
           </h2>
           <h3>
             City: {' '}
