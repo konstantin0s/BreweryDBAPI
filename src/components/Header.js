@@ -1,21 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Header.css';
 
 const Header =() => {
   return (
     <div>
       <header className="header" style={headerStyle}>
-        <h1>HouseOfBeer</h1>
-
+       <img src="https://images.pexels.com/photos/1267703/pexels-photo-1267703.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img" alt="" />
         <Link className="link" style={linkStyle} to="/">
-        {" "} Home |{" "}
+        {" "} Home {" "}
         </Link>
         <Link className="link" style={linkStyle} to="/beers">
-        |{" "}    By Name
+        {" "}    By Name
         </Link>{" "}
         
         <Link style={linkStyle} className="link" to="/location">
-        |{" "}     By location |{" "}
+        {" "}     By location {" "}
         </Link>
       </header>
 
