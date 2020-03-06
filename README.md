@@ -1,3 +1,10 @@
+How to start the project: 
+
+1. Git clone repo.
+2. Run: npm install (to add necessary packages).
+3. Create an .env file with REACT_APP_API_KEY=XXX  in the root project.
+4. Run: npm start (in terminal)
+
 Description of the decisions made to accomplish the assignment:
 
 As a user, I am interested in finding a list of breweries. =>  
@@ -28,8 +35,6 @@ To call the api, I've used axios.
 
 Of course, I have added a little bit of css style to make it look like a website. 
 
-
-.env file (with api key variable) needs to be added in the root project.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -62,7 +62,7 @@ class Brewerys extends Component {
   render() {
 
     console.log(this.state.brewerys);
-    if (!this.state.brewerys == "" || !this.state.brewerys == "undefined") {
+      if (Array.isArray(this.state.brewerys)) {
       return (
         <div className="byCity">
           <SearchBrewery onSearch={this.performSearch} />

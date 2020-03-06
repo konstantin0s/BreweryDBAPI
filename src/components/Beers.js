@@ -63,10 +63,10 @@ class Beers extends Component {
 
   render() {
 
-    const {brewerys, searchText, isLoading} = this.state;
+    const {brewerys, isLoading} = this.state;
 
     console.log(brewerys);
-    if (!brewerys == "" || !brewerys == "undefined") {
+      if (Array.isArray(brewerys)) {
       return (
         <div className="byCity">
           <SearchByName onSearch={this.performSearch} />
@@ -79,13 +79,16 @@ class Beers extends Component {
             pageSize={this.state.pagination.itemsPerPage}
           />
 
-          {isLoading ? <p>Loading</p> : null}
+          
 
-          {brewerys.map(beer => (
+          {isLoading ? <p>Loading</p> :
+
+         brewerys.map(beer => (
       
-            <Beer key={beer.id} beer={beer} />
-            ))
-        }
+        <Beer key={beer.id} beer={beer} />
+        ))
+                  
+         }
 
           <Pagination
             className={this.state.isLoading ? " hidden" : ""}
