@@ -28,10 +28,12 @@ class Brewerys extends Component {
 
     axios
       .get(
-        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/locations/?key=${API_KEY}&country=us&locality=${query}&sort=asc`
+        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/locations/?key=${API_KEY}&country=us&locality=${query}&sort=asc&page=${this.state.pagination.currentPage}`
       )
       .then(res => {
         const brewerys = res.data.data;
+        console.log(res.data.data);
+        console.log(this.state.pagination.currentPage);
         this.setState({
           brewerys: brewerys,
           isLoading: false,
@@ -62,6 +64,7 @@ class Brewerys extends Component {
   render() {
 
     console.log(this.state.brewerys);
+    console.log(this.state.pagination)
       if (Array.isArray(this.state.brewerys)) {
       return (
         <div className="byCity">
@@ -76,7 +79,7 @@ class Brewerys extends Component {
           />
 
 
-          {this.state.isLoading ? <p>Loading</p> : null}
+          {/* {this.state.isLoading ? <p>Loading</p> : null} */}
 
           {this.state.brewerys.map(brewery => (
             <Brewery key={brewery.id} brewery={brewery} />

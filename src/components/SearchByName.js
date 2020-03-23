@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-
+import Beer from './Beer';
 
 class SearchBrewery extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+  this.state = {
     searchText: ""
-  };
+    };
+}
 
   onSearchChange = e => {
     this.setState({
-      searchText: e.target.value
+      searchText: e.target.value,
+      term: e.target.value
     });
   };
 
@@ -19,7 +23,10 @@ class SearchBrewery extends Component {
     this.setState({ searchText: "" });
   };
 
+
   render() {
+    console.log(this.state.searchText)
+    console.log(this.state.brewerys)
     return (
       <div className="byCity">
         <form className="search-form" onSubmit={this.handleSubmit}>
@@ -41,6 +48,11 @@ class SearchBrewery extends Component {
             <i className="fa fa-fw fa-search text-dark" aria-hidden="true"></i>
           </button>
         </form>
+
+        {this.state.brewerys.filter(searchingFor(this.state.term)).map((beer) => 
+          <Beer key={beer.id} beer={beer} />
+        )} 
+   
       </div>
     );
   }

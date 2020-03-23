@@ -16,10 +16,14 @@ body {
   height: 100vh;
 }
 
+/* .search-form input {
+  text-transform: capitalize;
+} */
+
 .the-app {
 overflow: hidden;
   width: 100%;
-  height: 200vh;
+  /* height: 200vh; */
   background: url('https://images.pexels.com/photos/669210/pexels-photo-669210.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;

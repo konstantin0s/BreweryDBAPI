@@ -17,7 +17,7 @@ class Beers extends Component {
       pagination: {
         total: 0,
         currentPage: 1,
-        itemsPerPage: 15
+        itemsPerPage: 25
       }
     };
   }
@@ -66,6 +66,7 @@ class Beers extends Component {
     const {brewerys, isLoading} = this.state;
 
     console.log(brewerys);
+    console.log(this.state.pagination)
       if (Array.isArray(brewerys)) {
       return (
         <div className="byCity">
