@@ -1,0 +1,17 @@
+.inner-list {
+    position: relative;
+    background: #FFf;
+    padding: 2em;
+    margin: 2em;
+    border: 2px solid #333;
+}
+
+.linkz {
+    text-decoration: none;
+    color: #333;
+}
+
+.linkz:hover {
+    text-decoration: none;
+    color: rgb(99, 92, 92);
+}

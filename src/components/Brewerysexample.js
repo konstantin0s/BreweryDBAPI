@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Brewery from './Brewery';
+import './css/brewerys.css'
 // import SearchByName from "./SearchByName";
 // import Pagination from './Pagination'
 import axios from 'axios';
@@ -80,10 +81,6 @@ handleSubmit = e => {
 
     const {brewerys, isLoading, term} = this.state;
 
-    console.log(brewerys);
-    console.log(this.state.pagination);
-    console.log(this.state.searchText);
-    console.log(term);
       if (Array.isArray(brewerys)) {
       return (
         <div className="byCity">

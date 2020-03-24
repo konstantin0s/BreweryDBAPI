@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Beer from './Beer';
 // import SearchByName from "./SearchByName";
-// import Pagination from './Pagination'
+import Pagination from './Pagination'
+import './css/beers.css'
 import axios from 'axios';
 require('dotenv');
 
@@ -36,7 +37,7 @@ class Beersexample extends Component {
 
     axios
       .get(
-        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beers/?key=${API_KEY}`)
+        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beers/"{${this.state.pagination.currentPage}/?key=${API_KEY}`)
       .then(res => {
         const brewerys = res.data.data;
         this.setState({
@@ -54,19 +55,20 @@ class Beersexample extends Component {
   };
 
   
-  // paginate = (page, itemsPerPage) => {
-  //   this.setState(
-  //     state => {
-  //       state.pagination.currentPage = page;
-  //       state.pagination.itemsPerPage = itemsPerPage;
 
-  //       return state;
-  //     },
-  //     () => {
-  //       this.performSearch();
-  //     }
-  //   );
-  // };
+  paginate = (page, itemsPerPage) => {
+    this.setState(
+      state => {
+        state.pagination.currentPage = page;
+        state.pagination.itemsPerPage = itemsPerPage;
+
+        return state;
+      },
+      () => {
+        this.performSearch();
+      }
+    );
+  };
 
 // paginate = (page, itemsPerPage) => {
 //     this.setState(state => ({ ...state, isLoading: true }));
@@ -83,15 +85,12 @@ class Beersexample extends Component {
 //         console.log(this.state.pagination.currentPage);
 //         console.log(this.state.pagination.itemsPerPage);
 //         console.log(itemsPerPage);
-//         this.setState({
-//           brewerys: brewerys,
-//           isLoading: false,
-//           pagination: {
-//             currentPage: page,
-//             itemsPerPage: res.data.itemsPerPage,
-//             total: res.data.totalResults
-//           }
-//         });
+//        state => {
+//         state.pagination.currentPage = page;
+//         state.pagination.itemsPerPage = itemsPerPage;
+
+//         return state;
+//       }
 //       })
 //       .catch(err => console.log(err));
 //   };
@@ -118,15 +117,14 @@ handleSubmit = e => {
   render() {
 
     const {brewerys, isLoading, term} = this.state;
+    const {pagination} = this.state;
 
     console.log(brewerys);
-    console.log(this.state.pagination);
-    console.log(this.state.searchText);
-    console.log(term);
+    console.log(pagination.currentPage);
       if (Array.isArray(brewerys)) {
       return (
-        <div className="byCity">
-          <div className="byCitysearch">
+        <div className="byName">
+          <div className="byNamesearch">
         <form className="search-form" onSubmit={this.handleSubmit}>
           <div className="active-cyan-3 active-cyan-4 mb-4 mt-4">
             <input
@@ -147,6 +145,14 @@ handleSubmit = e => {
           </button>
         </form>
 
+        <Pagination
+            className={this.state.isLoading ? " hidden" : ""}
+            total={this.state.pagination.total}
+            current={this.state.pagination.currentPage}
+            onChange={this.paginate}
+            pageSize={this.state.pagination.itemsPerPage}
+          /> 
+
           {
           isLoading ? <p>Loading</p> :
         brewerys.filter(searchingFor(term)).map((beer) => (
@@ -154,45 +160,21 @@ handleSubmit = e => {
         ))
          }
 
+<Pagination
+            className={this.state.isLoading ? " hidden" : ""}
+            total={this.state.pagination.total}
+            current={this.state.pagination.currentPage}
+            onChange={this.paginate}
+            pageSize={this.state.pagination.itemsPerPage}
+          /> 
    
       </div>
 
-      
-          {/* <Pagination
-            className={this.state.isLoading ? " hidden" : ""}
-            total={this.state.pagination.total}
-            current={this.state.pagination.currentPage}
-            onChange={this.paginate}
-            pageSize={this.state.pagination.itemsPerPage}
-          /> */}
-
-          
-
-          {/* {isLoading ? <p>Loading</p> :
-
-
-         brewerys.map(beer => (
-      
-         <Beer key={beer.id} beer={beer} />
-         ))
-                  
-         } */}
-
-          {/* <Pagination
-            className={this.state.isLoading ? " hidden" : ""}
-            total={this.state.pagination.total}
-            current={this.state.pagination.currentPage}
-            onChange={this.paginate}
-            pageSize={this.state.pagination.itemsPerPage}
-          /> */}
-
-        </div>
+    </div>
       );
     } else {
       return (
         <div>
-          {/* <SearchByName onSearch={this.performSearch} /> */}
-    
 
           <p>Loading...</p>
 

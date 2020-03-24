@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import './css/onebrewery.css';
 require('dotenv');
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -51,32 +52,43 @@ class OneBrewery extends React.Component {
         return (
 
       
-    <div className="container">
+    <div className="containery">
       <ul className="ulist">
       {this.state.brewery.map(onebrewery => (
         <li className="list-item"
          key={onebrewery.id}>
-          <h2>
-            Brewery Name: {' '}</h2>
-           <h4> {onebrewery.name ? onebrewery.name : "No name available"}</h4>
+           
+           <div className="inner-list">
+        <div className="name">
+        <h3>Brewery Name: {' '}</h3>
+           <p> {onebrewery.name ? onebrewery.name : "No name available"}</p>
+        </div>
         
-          <h3>
-            City: {' '}  </h3>
-          <h4>  {onebrewery.locality
-              ? onebrewery.locality
-              : "No Locality available"}</h4>
-         
-
+        <div className="city">
           <h4>
-            Type: {' '} </h4>
-        <h5>    {onebrewery.locationType
+            City: {' '}  </h4>
+          <p>  {onebrewery.locality
+              ? onebrewery.locality
+              : "No Locality available"}</p> 
+          </div>
+
+          <div className="type">
+          <h5>
+            Type: {' '} </h5>
+        <p>    {onebrewery.locationType
               ? onebrewery.locationType
-              : "No type"}</h5>
-         
+              : "No type"}</p>
+         </div>
+
+         <div className="region">
           <p>
-            Region: {' '}
+            Region: {' '} {' '}
             {onebrewery.region ? onebrewery.region : "Without Region"}
           </p>
+          </div>
+
+        </div>
+
         </li>
               ))}
       </ul>

@@ -1,0 +1,18 @@
+.byCity {
+    overflow: hidden;
+    position: absolute !important;
+    width: 100%;
+    padding: 2em 1em;
+    min-width: 100%;
+    background: url('https://images.pexels.com/photos/3876541/pexels-photo-3876541.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 30;
+}
+
+
+.list-item:last-of-type {
+    margin-bottom: 10em;
+}

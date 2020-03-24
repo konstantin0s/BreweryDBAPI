@@ -1,0 +1,36 @@
+.byName {
+    overflow: hidden;
+    position: absolute !important;
+    width: 100%;
+    padding: 2em 1em;
+    min-width: 100%;
+    background: url('https://images.pexels.com/photos/3633148/pexels-photo-3633148.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 30;
+}
+
+.search-form {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+input::placeholder {
+    margin-left: 1em !important;
+}
+
+.search-form #submit {
+    width: 10%;
+    display: flex;
+    top: 23px;
+    left: 10px;
+    height: 2.5em;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}

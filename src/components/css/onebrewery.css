@@ -1,0 +1,64 @@
+html,
+body {
+    height: 100vh;
+}
+
+.containery {
+    overflow: hidden;
+    position: absolute !important;
+    width: 100%;
+    padding: 2em 1em;
+    min-width: 100%;
+    background: url('https://images.pexels.com/photos/2387120/pexels-photo-2387120.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 30;
+}
+
+
+.list-item:last-of-type {
+    margin-bottom: 10em;
+}
+
+.inner-list {
+    position: relative;
+    background: #FFf;
+    padding: 2em;
+    margin: 2em;
+    border: 2px solid #333;
+    line-height: 0em;
+}
+
+
+.name,
+.city,
+.type,
+.region {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: center;
+}
+
+.name p {
+    position: relative;
+    top: 19px;
+    left: -20px;
+}
+
+
+.city p {
+    position: relative;
+    top: 14px;
+    left: -20px;
+}
+
+
+.type p {
+    position: relative;
+    top: -7px;
+    left: -20px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './css/brewery.css';
 
 const Brewery = (props) => {
 
@@ -9,9 +10,8 @@ const Brewery = (props) => {
       <ul className="ulist">
       <Link className="list-item linkz" id={props.brewery.id} to={`/brewery/${props.brewery.id}`}
          key={props.brewery.id}>
-  {console.log(props.brewery.breweryId)}
-  {console.log('just props', props.id)}
-          <h2>
+      <div className="inner-list">
+      <h2>
             Beer: {' '}
             {props.brewery.brewery.nameShortDisplay ? props.brewery.brewery.nameShortDisplay : "No name available"}
           </h2>
@@ -32,6 +32,7 @@ const Brewery = (props) => {
             Region: {' '}
             {props.brewery.region ? props.brewery.region : "Without region"}
           </p>
+      </div>
         </Link>
       </ul>
       

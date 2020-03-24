@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import './css/onebeer.css';
 require('dotenv');
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -46,12 +47,14 @@ class OneBeer extends React.Component {
         console.log(beer);
 
         return (
-            <div className="container">
+            <div className="containerx">
             <ul className="ulist">
               <li className="list-item"
                key={this.state.beer.id}>
+                 
+                <div className="inner-list">
                 <h2>
-                  Name: {' '}
+                  Beer: {' '}
                   {beer.name ? beer.name : "No name available"}
                 </h2>
               <h6>
@@ -63,6 +66,8 @@ class OneBeer extends React.Component {
                   {beer.description ? beer.description : "No description available"}
                 </p>
           
+                </div>
+
               </li>
             </ul>
             

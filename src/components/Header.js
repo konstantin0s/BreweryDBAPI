@@ -11,19 +11,15 @@ const Header =() => {
         {" "} Home {" "}
         </Link>
         <Link className="link" style={linkStyle} to="/beers">
-        {" "}    By Name
+        {" "}    Beers
         </Link>{" "}
         
         <Link style={linkStyle} className="link" to="/location">
-        {" "}     By location {" "}
+        {" "}     Breweries {" "}
         </Link>
       </header>
 
-      <div className="footer-bottom">
-     
-          <p className="text-center"> 2020 Copyright © Beers </p>
-       
-      </div>
+
     </div>
   );
 }
