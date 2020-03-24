@@ -92,7 +92,7 @@ handleSubmit = e => {
               onChange={this.onSearchChange}
               type="text"
               ref={input => (this.query = input)}
-              placeholder="Search By Name"
+              placeholder="Enter City Name"
               aria-label="Search"
             />
           </div>
