@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Brewery = (props) => {
+
   return (
+  
     <div className="container">
       <ul className="ulist">
-        <li className="list-item"
+      <Link className="list-item linkz" id={props.brewery.id} to={`/brewery/${props.brewery.id}`}
          key={props.brewery.id}>
+  {console.log(props.brewery.breweryId)}
+  {console.log('just props', props.id)}
           <h2>
             Beer: {' '}
             {props.brewery.brewery.nameShortDisplay ? props.brewery.brewery.nameShortDisplay : "No name available"}
@@ -27,7 +32,7 @@ const Brewery = (props) => {
             Region: {' '}
             {props.brewery.region ? props.brewery.region : "Without region"}
           </p>
-        </li>
+        </Link>
       </ul>
       
     </div>

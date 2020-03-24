@@ -25,7 +25,7 @@ class Beersexample extends Component {
       pagination: {
         total: 0,
         currentPage: 1,
-        itemsPerPage: 25
+        itemsPerPage: 15
       }
     };
   }

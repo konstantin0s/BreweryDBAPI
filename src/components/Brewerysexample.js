@@ -30,7 +30,6 @@ class Brewerysexample extends Component {
     };
   }
 
-
   performSearch = () => {
     this.setState(state => ({ ...state, isLoading: true }));
 
@@ -53,48 +52,6 @@ class Brewerysexample extends Component {
       .catch(err => console.log(err));
   };
 
-  
-  // paginate = (page, itemsPerPage) => {
-  //   this.setState(
-  //     state => {
-  //       state.pagination.currentPage = page;
-  //       state.pagination.itemsPerPage = itemsPerPage;
-
-  //       return state;
-  //     },
-  //     () => {
-  //       this.performSearch();
-  //     }
-  //   );
-  // };
-
-// paginate = (page, itemsPerPage) => {
-//     this.setState(state => ({ ...state, isLoading: true }));
-
-//     // const {itemsPerPage} = this.state.pagination.itemsPerPage;
-
-//     axios
-//       .get(
-//         `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beers/?key=${API_KEY}&p=${this.state.pagination.itemsPerPage}`
-//       )
-//       .then(res => {
-//         const brewerys = res.data.data;
-//         console.log(brewerys);
-//         console.log(this.state.pagination.currentPage);
-//         console.log(this.state.pagination.itemsPerPage);
-//         console.log(itemsPerPage);
-//         this.setState({
-//           brewerys: brewerys,
-//           isLoading: false,
-//           pagination: {
-//             currentPage: page,
-//             itemsPerPage: res.data.itemsPerPage,
-//             total: res.data.totalResults
-//           }
-//         });
-//       })
-//       .catch(err => console.log(err));
-//   };
 
  jsUcfirst = str => {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -105,7 +62,6 @@ class Brewerysexample extends Component {
 }
 
 onSearchChange = e => {
-
   this.setState({
     searchText: this.jsUcfirst(e.target.value),
     term: this.jsUcfirst(e.target.value)
@@ -155,7 +111,10 @@ handleSubmit = e => {
           {
           isLoading ? <p>Loading</p> :
         brewerys.filter(searchingFor(term)).map((brewery) => (
-          <Brewery key={brewery.id} brewery={brewery} />
+          
+          <Brewery key={brewery.id} id={brewery.breweryId} brewery={brewery} />
+    
+          
         ))
          }
 
