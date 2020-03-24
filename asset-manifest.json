@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BreweryDBAPI/static/css/main.226ba883.chunk.css",
-    "main.js": "/BreweryDBAPI/static/js/main.6adc0208.chunk.js",
-    "main.js.map": "/BreweryDBAPI/static/js/main.6adc0208.chunk.js.map",
+    "main.js": "/BreweryDBAPI/static/js/main.edd2dd42.chunk.js",
+    "main.js.map": "/BreweryDBAPI/static/js/main.edd2dd42.chunk.js.map",
     "runtime-main.js": "/BreweryDBAPI/static/js/runtime-main.33b72e09.js",
     "runtime-main.js.map": "/BreweryDBAPI/static/js/runtime-main.33b72e09.js.map",
     "static/js/2.a936d54c.chunk.js": "/BreweryDBAPI/static/js/2.a936d54c.chunk.js",
     "static/js/2.a936d54c.chunk.js.map": "/BreweryDBAPI/static/js/2.a936d54c.chunk.js.map",
     "index.html": "/BreweryDBAPI/index.html",
-    "precache-manifest.fe4aef3de8d28b78fd97f0fe5cdd42fa.js": "/BreweryDBAPI/precache-manifest.fe4aef3de8d28b78fd97f0fe5cdd42fa.js",
+    "precache-manifest.787cd0c6f2db53bfe48707b5743fd2cb.js": "/BreweryDBAPI/precache-manifest.787cd0c6f2db53bfe48707b5743fd2cb.js",
     "service-worker.js": "/BreweryDBAPI/service-worker.js",
     "static/css/main.226ba883.chunk.css.map": "/BreweryDBAPI/static/css/main.226ba883.chunk.css.map",
     "static/js/2.a936d54c.chunk.js.LICENSE.txt": "/BreweryDBAPI/static/js/2.a936d54c.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.33b72e09.js",
     "static/js/2.a936d54c.chunk.js",
     "static/css/main.226ba883.chunk.css",
-    "static/js/main.6adc0208.chunk.js"
+    "static/js/main.edd2dd42.chunk.js"
   ]
 }
