@@ -33,11 +33,11 @@ class Beersexample extends Component {
 
 
   performSearch = () => {
-    this.setState(state => ({ ...state, isLoading: true }));
+    // this.setState(state => ({ ...state, isLoading: true }));
 
     axios
       .get(
-        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beers/"{${this.state.pagination.currentPage}/?key=${API_KEY}`)
+        `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beers/?key=${API_KEY}`)
       .then(res => {
         const brewerys = res.data.data;
         this.setState({
@@ -61,7 +61,8 @@ class Beersexample extends Component {
       state => {
         state.pagination.currentPage = page;
         state.pagination.itemsPerPage = itemsPerPage;
-
+console.log( state.pagination.currentPage);
+console.log(page);
         return state;
       },
       () => {
