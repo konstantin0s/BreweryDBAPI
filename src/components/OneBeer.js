@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import Footer from "./Footer";
 import './css/onebeer.css';
 require('dotenv');
 
@@ -44,13 +45,12 @@ class OneBeer extends React.Component {
     render() {
     
         const { beer } = this.state;
-        console.log(beer);
 
         return (
             <div className="containerx">
             <ul className="ulist">
-              <li className="list-item"
-               key={this.state.beer.id}>
+              <li className="list-item oneb"
+               key={beer.id}>
                  
                 <div className="inner-list">
                 <h2>
@@ -70,6 +70,8 @@ class OneBeer extends React.Component {
 
               </li>
             </ul>
+
+            <Footer />
             
           </div>
         );

@@ -6,6 +6,25 @@
     border: 2px solid #333;
 }
 
+.oneb {
+    margin-bottom: 10em;
+}
+
+
+.inner-list {
+    position: relative;
+    background: #FFf;
+    padding: 2em;
+    margin: 2em;
+    border: 2px solid #333;
+}
+
+.list-item:hover {
+    text-decoration: none;
+    color: rgb(99, 92, 92);
+}
+
+
 
 .list-item h6 {
     position: relative;
@@ -26,24 +45,6 @@
     -o-background-size: cover;
     background-size: cover;
     z-index: 30;
-}
-
-.list-item:last-of-type {
-    margin-bottom: 10em;
-}
-
-
-.inner-list {
-    position: relative;
-    background: #FFf;
-    padding: 2em;
-    margin: 2em;
-    border: 2px solid #333;
-}
-
-.list-item:hover {
-    text-decoration: none;
-    color: rgb(99, 92, 92);
 }
 
 .footer-bottom {

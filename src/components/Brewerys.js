@@ -1,18 +1,12 @@
 import React, { Component } from 'react'
 import Brewery from './Brewery';
-import './css/brewerys.css'
-import Pagination from './Pagination'
+import './css/brewerys.css';
+import Pagination from './Pagination';
+import Footer from "./Footer";
 import axios from 'axios';
 require('dotenv');
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
-function searchingFor(term) {
-  return function(x) {
-    return x.locality.includes(term) || !term;
-  }
-}
-
 
 class Brewerysexample extends Component {
   constructor(props) {
@@ -29,6 +23,13 @@ class Brewerysexample extends Component {
       }
     };
   }
+
+searchingFor = term => {
+    return (x) =>  {
+      return x.locality.includes(term) || !term;
+    }
+  }
+  
 
   performSearch = (page) => {
     this.setState(state => ({ ...state, isLoading: true }));
@@ -136,7 +137,7 @@ handleSubmit = e => {
 
           {
           isLoading ? <p>Loading</p> :
-        brewerys.filter(searchingFor(term)).map((brewery) => (
+        brewerys.filter(this.searchingFor(term)).map((brewery) => (
           
           <Brewery key={brewery.id} id={brewery.breweryId} brewery={brewery} />
     
@@ -151,7 +152,7 @@ handleSubmit = e => {
             onChange={this.paginate}
             pageSize={this.state.pagination.itemsPerPage}
           />
-
+      <Footer />
 
    
       </div>

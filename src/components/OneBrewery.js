@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import Footer from "./Footer";
 import './css/onebrewery.css';
 require('dotenv');
 
@@ -11,7 +12,6 @@ class OneBrewery extends React.Component {
   
       this.state = {
         brewery: [],
-        thisId: '',
         isLoading: true
       };
     }
@@ -44,9 +44,6 @@ class OneBrewery extends React.Component {
 
     render() {
     
-        const { brewery } = this.state;
-        console.log(this.state.brewery);
-        console.log(this.state.thisId);
         if (Array.isArray(this.state.brewery)) {
 
         return (
@@ -55,7 +52,7 @@ class OneBrewery extends React.Component {
     <div className="containery">
       <ul className="ulist">
       {this.state.brewery.map(onebrewery => (
-        <li className="list-item"
+        <li className="list-item onebrew"
          key={onebrewery.id}>
            
            <div className="inner-list">
@@ -93,6 +90,7 @@ class OneBrewery extends React.Component {
               ))}
       </ul>
 
+<Footer />
     </div>
         );
         }

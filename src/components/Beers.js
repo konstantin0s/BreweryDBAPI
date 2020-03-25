@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import Beer from './Beer';
-import Pagination from './Pagination'
+import Pagination from './Pagination';
+import Footer from "./Footer";
 import './css/beers.css'
 import axios from 'axios';
 require('dotenv');
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
-function searchingFor(term) {
-  return function(x) {
-    return x.name.includes(term) || !term;
-  }
-}
 
 
 class Beersexample extends Component {
@@ -28,6 +23,12 @@ class Beersexample extends Component {
         itemsPerPage: 15
       }
     };
+  }
+
+  searchingFor = term => {
+    return (x) =>  {
+      return x.name.includes(term) || !term;
+    }
   }
 
 
@@ -136,7 +137,7 @@ handleSubmit = e => {
 
           {
           isLoading ? <p>Loading</p> :
-        brewerys.filter(searchingFor(term)).map((beer) => (
+        brewerys.filter(this.searchingFor(term)).map((beer) => (
           <Beer key={beer.id} beer={beer} />
         ))
          }
@@ -148,6 +149,8 @@ handleSubmit = e => {
             onChange={this.paginate}
             pageSize={this.state.pagination.itemsPerPage}
           /> 
+
+          <Footer />
    
       </div>
 
