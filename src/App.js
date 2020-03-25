@@ -1,17 +1,15 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import OneBrewery from "./components/OneBrewery";
 import OneBeer from "./components/OneBeer";
-import Brewerysexample from "./components/Brewerysexample";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Brewerys from "./components/Brewerys";
+import Beers from './components/Beers';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Beersexample from './components/Beersexample';
+
 import "./App.css";
 
 class App extends Component {
-
-
-
 
   render() {
 
@@ -24,9 +22,9 @@ class App extends Component {
 
           <Route exact path="/" />
 
-   <Route exact path="/beers" component={Beersexample} />
-<Route exact path="/location" component={Brewerysexample} />
-{/* <Route exact path="/brewery/:id" component={OneBrewery} /> */}
+   <Route exact path="/beers" component={Beers} />
+<Route exact path="/location" component={Brewerys} />
+
 <Route
         path="/brewery/:id" 
         render={request => {
