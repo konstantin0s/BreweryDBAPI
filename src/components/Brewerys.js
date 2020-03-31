@@ -107,25 +107,21 @@ handleSubmit = e => {
       return (
         <div className="byCity">
           <div className="byCitysearch">
-        <form className="search-form" onSubmit={this.handleSubmit}>
-          <div className="active-cyan-3 active-cyan-4 mb-4 mt-4">
+   
+   <div className="contain-form">
+   <form className="search-form" onSubmit={this.handleSubmit}>
+ 
             <input
-              className="form-control"
               onChange={this.onSearchChange}
               type="text"
               ref={input => (this.query = input)}
               placeholder="Enter City Name"
               aria-label="Search"
             />
-          </div>
 
-          <button
-            type="submit"
-            id="submit"
-            className="input-group-text cyan lighten-2">
-            <i className="fa fa-fw fa-search text-dark" aria-hidden="true"></i>
-          </button>
+          <div className="search"></div>
         </form>
+   </div>
 
                   <Pagination
             className={this.state.isLoading ? " hidden" : ""}

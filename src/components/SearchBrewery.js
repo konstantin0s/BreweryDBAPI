@@ -21,7 +21,8 @@ class SearchBrewery extends Component {
   render() {
     return (
       <div className="byCity">
-        <form className="search-form" onSubmit={this.handleSubmit}>
+      <div className="contain-form">
+      <form className="search-form" onSubmit={this.handleSubmit}>
           <div className="active-cyan-3 active-cyan-4 mb-4 mt-4">
             <input
               className="form-control"
@@ -39,7 +40,9 @@ class SearchBrewery extends Component {
             className="input-group-text cyan lighten-2">
             <i className="fa fa-fw fa-search text-dark" aria-hidden="true"></i>
           </button>
+          <div className="search"></div>
         </form>
+      </div>
       </div>
     );
   }

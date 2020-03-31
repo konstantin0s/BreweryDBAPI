@@ -25,7 +25,7 @@ class OneBeer extends React.Component {
             `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/beer/${this.props.id}/?key=${API_KEY}`)
           .then(res => {
             const beer = res.data.data;
-            console.log(beer);
+            // console.log(beer);
             this.setState({
               beer: beer,
 
@@ -61,11 +61,10 @@ class OneBeer extends React.Component {
                   Organic: {' '}
                   {beer.isOrganic ? beer.isOrganic : "No Organicx available"}
               </h6>
-                <p>
+                <p className="description">
                 Description: {' '}
                   {beer.description ? beer.description : "No description available"}
-                </p>
-          
+                </p>          
                 </div>
 
               </li>

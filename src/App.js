@@ -29,7 +29,7 @@ class App extends Component {
         path="/brewery/:id" 
         render={request => {
           const id = request.match.params.id;
-          console.log(id);
+          // console.log(id);
           return <OneBrewery id={id} />;
         }}
       />
@@ -38,7 +38,7 @@ class App extends Component {
         path="/beer/:id" 
         render={request => {
           const id = request.match.params.id;
-          console.log(id);
+          // console.log(id);
           return <OneBeer id={id} />;
         }}
       />

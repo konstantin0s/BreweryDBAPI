@@ -25,7 +25,7 @@ class OneBrewery extends React.Component {
             `${process.env.REACT_APP_CORS_PROXY_URL}https://sandbox-api.brewerydb.com/v2/brewery/q6vJUK/locations/?key=${API_KEY}`)
           .then(res => {
             const brewery = res.data.data;
-            console.log(brewery);
+            // console.log(brewery);
             this.setState({
               brewery: brewery,
 
