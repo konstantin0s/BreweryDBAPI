@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/BreweryDBAPI/static/css/main.cbd908a5.chunk.css",
-    "main.js": "/BreweryDBAPI/static/js/main.f7df2ad8.chunk.js",
-    "main.js.map": "/BreweryDBAPI/static/js/main.f7df2ad8.chunk.js.map",
+    "main.css": "/BreweryDBAPI/static/css/main.7989e062.chunk.css",
+    "main.js": "/BreweryDBAPI/static/js/main.f540916b.chunk.js",
+    "main.js.map": "/BreweryDBAPI/static/js/main.f540916b.chunk.js.map",
     "runtime-main.js": "/BreweryDBAPI/static/js/runtime-main.33b72e09.js",
     "runtime-main.js.map": "/BreweryDBAPI/static/js/runtime-main.33b72e09.js.map",
-    "static/js/2.533407ab.chunk.js": "/BreweryDBAPI/static/js/2.533407ab.chunk.js",
-    "static/js/2.533407ab.chunk.js.map": "/BreweryDBAPI/static/js/2.533407ab.chunk.js.map",
+    "static/js/2.a8b7d5b4.chunk.js": "/BreweryDBAPI/static/js/2.a8b7d5b4.chunk.js",
+    "static/js/2.a8b7d5b4.chunk.js.map": "/BreweryDBAPI/static/js/2.a8b7d5b4.chunk.js.map",
     "index.html": "/BreweryDBAPI/index.html",
-    "precache-manifest.809cd7f9f5c7fdedfb9be1d4f7d233c7.js": "/BreweryDBAPI/precache-manifest.809cd7f9f5c7fdedfb9be1d4f7d233c7.js",
+    "precache-manifest.5f52b913d6db8a05b6e106d40ecb218b.js": "/BreweryDBAPI/precache-manifest.5f52b913d6db8a05b6e106d40ecb218b.js",
     "service-worker.js": "/BreweryDBAPI/service-worker.js",
-    "static/css/main.cbd908a5.chunk.css.map": "/BreweryDBAPI/static/css/main.cbd908a5.chunk.css.map",
-    "static/js/2.533407ab.chunk.js.LICENSE.txt": "/BreweryDBAPI/static/js/2.533407ab.chunk.js.LICENSE.txt"
+    "static/css/main.7989e062.chunk.css.map": "/BreweryDBAPI/static/css/main.7989e062.chunk.css.map",
+    "static/js/2.a8b7d5b4.chunk.js.LICENSE.txt": "/BreweryDBAPI/static/js/2.a8b7d5b4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.33b72e09.js",
-    "static/js/2.533407ab.chunk.js",
-    "static/css/main.cbd908a5.chunk.css",
-    "static/js/main.f7df2ad8.chunk.js"
+    "static/js/2.a8b7d5b4.chunk.js",
+    "static/css/main.7989e062.chunk.css",
+    "static/js/main.f540916b.chunk.js"
   ]
 }
