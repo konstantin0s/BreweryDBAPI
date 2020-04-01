@@ -5,7 +5,7 @@ import './css/Header.css';
 const Header =() => {
   return (
     <div>
-      <header className="header" style={headerStyle}>
+      <header id="masthead" className="header" style={headerStyle}>
        <img src="https://images.pexels.com/photos/1267703/pexels-photo-1267703.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="img" alt="" />
         <Link className="link" style={linkStyle} to="/">
         {" "} Home {" "}

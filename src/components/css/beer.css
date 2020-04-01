@@ -6,6 +6,29 @@
     border: 2px solid #333;
 }
 
+.container-x {
+    /* position: absolute; */
+}
+
+
+.container-x .ulist {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    min-width: 100%;
+    margin-bottom: 4em;
+}
+
+.container-x .list-item {
+    margin-bottom: 1em;
+    left: 1em;
+}
+
+.container-x .list-item {
+    width: 92%;
+    left: 1em;
+    padding: 0em 2em;
+}
+
 .inner-list p {
     display: flex;
     flex-direction: column;

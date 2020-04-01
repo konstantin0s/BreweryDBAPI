@@ -4,9 +4,10 @@ import './css/beer.css';
 
 const Beer = (props) => {
   return (
-    <div className="container">
+    <div className="container-x">
       <ul className="ulist">
-      <Link className="list-item linkz" id={props.beer.id} to={`/beer/${props.beer.id}`}
+    <li className="list-item">
+    <Link className="linkz" id={props.beer.id} to={`/beer/${props.beer.id}`}
          key={props.beer.id}>
      
      <div className="inner-list">
@@ -17,6 +18,7 @@ const Beer = (props) => {
      </div>
     
         </Link>
+        </li>
       </ul>
       
     </div>

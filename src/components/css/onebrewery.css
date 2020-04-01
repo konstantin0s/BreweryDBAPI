@@ -17,48 +17,70 @@ body {
     z-index: 30;
 }
 
+.containery .ulist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 100%;
+    margin-bottom: 4em;
+}
 
 .onebrew {
     margin-bottom: 10em;
+    left: 1em;
 }
 
-.inner-list {
+.containery .list-item {
+    width: 92%;
+    left: 1em;
+    padding: 0em 2em;
+}
+
+.containery .inner-list {
+    text-align: center;
     position: relative;
     background: #FFf;
-    padding: 2em;
-    margin: 2em;
+    padding: 1em;
+    align-self: center;
     border: 2px solid #333;
-    line-height: 0em;
+    line-height: 0.3em;
+    width: 100%
 }
 
 
-.name,
-.city,
-.type,
-.region {
+.namex,
+.cityx,
+.typex,
+.regionx {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-self: center;
+    text-align: center;
     vertical-align: center;
+    border-bottom: 1px solid rgb(133, 126, 126);
+    margin: 0.5em 0em;
 }
 
-.name p {
+.namex p {
     position: relative;
-    top: 19px;
-    left: -20px;
-}
-
-
-.city p {
-    position: relative;
-    top: 14px;
-    left: -20px;
+    top: -8px;
 }
 
 
-.type p {
+.cityx p {
     position: relative;
-    top: -7px;
-    left: -20px;
+    top: -15px;
+}
+
+
+.typex h5 {
+    position: relative;
+    left: 0.8em;
+}
+
+
+.typex p {
+    position: relative;
+    top: -10px;
 }

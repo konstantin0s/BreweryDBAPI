@@ -56,12 +56,12 @@ class OneBrewery extends React.Component {
          key={onebrewery.id}>
            
            <div className="inner-list">
-        <div className="name">
+        <div className="namex">
         <h3>Brewery Name: {' '}</h3>
            <p> {onebrewery.name ? onebrewery.name : "No name available"}</p>
         </div>
         
-        <div className="city">
+        <div className="cityx">
           <h4>
             City: {' '}  </h4>
           <p>  {onebrewery.locality
@@ -69,7 +69,7 @@ class OneBrewery extends React.Component {
               : "No Locality available"}</p> 
           </div>
 
-          <div className="type">
+          <div className="typex">
           <h5>
             Type: {' '} </h5>
         <p>    {onebrewery.locationType
@@ -77,7 +77,7 @@ class OneBrewery extends React.Component {
               : "No type"}</p>
          </div>
 
-         <div className="region">
+         <div className="regionx">
           <p>
             Region: {' '} {' '}
             {onebrewery.region ? onebrewery.region : "Without Region"}
