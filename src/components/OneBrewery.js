@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import Footer from "./Footer";
+import Loader from "./Loader";
 import './css/onebrewery.css';
 require('dotenv');
 
@@ -43,15 +44,21 @@ class OneBrewery extends React.Component {
       }
 
     render() {
-    
-        if (Array.isArray(this.state.brewery)) {
+      const {brewery, isLoading} = this.state;
+        if (Array.isArray(brewery)) {
 
         return (
 
       
     <div className="containery">
       <ul className="ulist">
-      {this.state.brewery.map(onebrewery => (
+
+        
+      {
+      
+      isLoading ?   <Loader /> :
+
+      brewery.map(onebrewery => (
         <li className="list-item onebrew"
          key={onebrewery.id}>
            

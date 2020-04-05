@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import Footer from "./Footer";
+import Loader from "./Loader";
 import './css/onebeer.css';
 require('dotenv');
 
@@ -44,10 +45,11 @@ class OneBeer extends React.Component {
 
     render() {
     
-        const { beer } = this.state;
+        const { beer, isLoading } = this.state;
 
         return (
             <div className="containerx">
+                 {isLoading} ?   <Loader /> :
             <ul className="ulist">
               <li className="list-item oneb"
                key={beer.id}>
