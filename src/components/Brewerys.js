@@ -3,8 +3,10 @@ import Brewery from './Brewery';
 import './css/brewerys.css';
 import Pagination from './Pagination';
 import Footer from "./Footer";
+import Loader from "./Loader";
 import axios from 'axios';
 require('dotenv');
+
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -81,7 +83,9 @@ searchingFor = term => {
 }
 
   componentDidMount() {
-    this.performSearch();
+
+  this.performSearch();
+
 }
 
 onSearchChange = e => {
@@ -90,6 +94,24 @@ onSearchChange = e => {
     term: this.jsUcfirst(e.target.value)
   });
 };
+
+
+renderSuggestions = () => {
+  const { term, isLoading, brewerys } = this.state;
+
+    return (
+    
+        isLoading ? <Loader /> :
+      brewerys.filter(this.searchingFor(term)).map((brewery) => (
+        
+        <Brewery key={brewery.id} id={brewery.breweryId} brewery={brewery} />
+  
+        
+      ))
+       
+    )
+  
+}
 
 handleSubmit = e => {
   e.preventDefault();
@@ -100,27 +122,33 @@ handleSubmit = e => {
 
 
   render() {
-
-    const {brewerys, isLoading, term} = this.state;
+    const {brewerys, searchText} = this.state;
 
       if (Array.isArray(brewerys)) {
       return (
+  
         <div className="byCity">
+           
           <div className="byCitysearch">
    
    <div className="contain-form">
-   <form className="search-form" onSubmit={this.handleSubmit}>
- 
-            <input
-              onChange={this.onSearchChange}
-              type="text"
-              ref={input => (this.query = input)}
-              placeholder="Enter City Name"
-              aria-label="Search"
-            />
 
-          <div className="search"></div>
-        </form>
+<form className="search-form" onSubmit={this.handleSubmit}>
+ 
+ <input
+   onChange={this.onSearchChange}
+   id="searchField"
+   type="text"
+   value={searchText}
+   autoComplete="true"
+   ref={input => (this.query = input)}
+   placeholder="Enter City Name"
+   aria-label="Search"
+ />
+
+<div className="search"></div>
+</form>
+
    </div>
 
                   <Pagination
@@ -131,15 +159,7 @@ handleSubmit = e => {
             pageSize={this.state.pagination.itemsPerPage}
           />
 
-          {
-          isLoading ? <p>Loading</p> :
-        brewerys.filter(this.searchingFor(term)).map((brewery) => (
-          
-          <Brewery key={brewery.id} id={brewery.breweryId} brewery={brewery} />
-    
-          
-        ))
-         }
+       {this.renderSuggestions()}
 
 <Pagination
             className={this.state.isLoading ? " hidden" : ""}
@@ -159,12 +179,8 @@ handleSubmit = e => {
     } else {
       return (
         <div>
-    
-
-          <p>Loading...</p>
-
-
-   
+  
+  <Loader /> 
         </div>
       );
     }

@@ -6,7 +6,6 @@ import Brewerys from "./components/Brewerys";
 import Beers from './components/Beers';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import "./App.css";
 
 class App extends Component {
@@ -21,7 +20,7 @@ class App extends Component {
           <Switch>
 
           <Route exact path="/" />
-
+      
    <Route exact path="/beers" component={Beers} />
 <Route exact path="/location" component={Brewerys} />
 

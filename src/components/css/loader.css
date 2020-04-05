@@ -1,0 +1,23 @@
+.loader {
+    position: relative;
+    width: 100vw;
+    height: 1997px !important;
+
+    opacity: 1;
+
+
+    text-align: center;
+    background: #fff;
+    color: #333;
+    z-index: 2000;
+    left: -22px;
+    margin: 0;
+    padding: 0;
+    top: -185px;
+}
+
+.loader svg {
+    align-self: center;
+    position: relative;
+    top: 200px;
+}

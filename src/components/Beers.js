@@ -4,6 +4,7 @@ import Pagination from './Pagination';
 import Footer from "./Footer";
 import './css/beers.css'
 import axios from 'axios';
+import Loader from "./Loader";
 require('dotenv');
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -131,7 +132,7 @@ handleSubmit = e => {
           /> 
 
           {
-          isLoading ? <p>Loading</p> :
+          isLoading ?   <Loader /> :
         brewerys.filter(this.searchingFor(term)).map((beer) => (
           <Beer key={beer.id} beer={beer} />
         ))
@@ -155,7 +156,7 @@ handleSubmit = e => {
       return (
         <div>
 
-          <p>Loading...</p>
+    <Loader />
 
 
    
