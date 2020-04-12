@@ -1,12 +1,23 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner} from '@fortawesome/free-solid-svg-icons';
+import styled, { keyframes } from 'styled-components';
+import { rotateIn } from 'react-animations';
 import './css/loader.css';
+
+const rotatePin = keyframes`${rotateIn}`;
+ 
+const RotateDiv = styled.div`
+  animation: infinite 5s ${rotatePin};
+`;
+
 
 function ShowDetail() {
   return (
     <div className="loader text-center">
-     <FontAwesomeIcon className="icon" icon={faSpinner}  size='10x' />
+     <RotateDiv>
+       <h1 className="text">
+         Loading...
+       </h1>
+     </RotateDiv>
     </div>
   );
 }
