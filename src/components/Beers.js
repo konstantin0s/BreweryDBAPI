@@ -15,7 +15,8 @@ class Beersexample extends Component {
     super(props);
 
     this.state = {
-      searchText: '',
+      searchText: [],
+      term: [],
       brewerys: [],
       isLoading: true,
       pagination: {
@@ -97,11 +98,39 @@ handleSubmit = e => {
 };
 
 
+selectedText = (value) => {
+  this.setState(() => ({
+      searchText: [],
+      term: value
+  }))
+}
+
+
+renderSuggestions = () => {
+let {brewerys, term } = this.state;
+if (term.length === 0) {
+    return null;
+}
+return (
+    <ul className="ul">
+     { brewerys.filter(this.searchingFor(term)).map((brewery) => (
+          <li className="li" key={brewery.id} onClick={() => this.selectedText(brewery.name)}>
+              {brewery.name}
+          </li>
+      ) )}
+    </ul>
+
+)
+}
+
+
+
+
   render() {
 
     const {brewerys, isLoading, term} = this.state;
 
-    // console.log(brewerys);
+    console.log(brewerys);
     // console.log(pagination.currentPage);
       if (Array.isArray(brewerys)) {
       return (
@@ -118,7 +147,7 @@ handleSubmit = e => {
               placeholder="Enter Beers Name"
               aria-label="Search"
             />
-
+  {this.renderSuggestions()}
           <div className="search"></div>
         </form>
    </div>

@@ -15,7 +15,8 @@ class Brewerysexample extends Component {
     super(props);
 
     this.state = {
-      searchText: '',
+      searchText: [],
+      term: [],
       brewerys: [],
       isLoading: true,
       pagination: {
@@ -96,23 +97,6 @@ onSearchChange = e => {
 };
 
 
-renderSuggestions = () => {
-  const { term, isLoading, brewerys } = this.state;
-
-    return (
-    
-        isLoading ? <Loader /> :
-      brewerys.filter(this.searchingFor(term)).map((brewery) => (
-        
-        <Brewery key={brewery.id} id={brewery.breweryId} brewery={brewery} />
-  
-        
-      ))
-       
-    )
-  
-}
-
 handleSubmit = e => {
   e.preventDefault();
   this.performSearch(this.query.value);
@@ -120,9 +104,34 @@ handleSubmit = e => {
   this.setState({ searchText: "" });
 };
 
+selectedText = (value) => {
+  this.setState(() => ({
+      searchText: [],
+      term: value
+  }))
+}
+
+
+renderSuggestions = () => {
+let {brewerys, term } = this.state;
+if (term.length === 0) {
+    return null;
+}
+return (
+    <ul className="ul">
+     { brewerys.filter(this.searchingFor(term)).map((brewery) => (
+          <li className="li" key={brewery.id} onClick={() => this.selectedText(brewery.name)}>
+              {brewery.name}
+          </li>
+      ) )}
+    </ul>
+
+)
+}
+
 
   render() {
-    const {brewerys, searchText} = this.state;
+    const {brewerys, searchText, term, isLoading} = this.state;
 
       if (Array.isArray(brewerys)) {
       return (
@@ -130,6 +139,7 @@ handleSubmit = e => {
         <div className="byCity">
            
           <div className="byCitysearch">
+            <div id="progress"></div>
    
    <div className="contain-form">
 
@@ -143,8 +153,8 @@ handleSubmit = e => {
    autoComplete="true"
    ref={input => (this.query = input)}
    placeholder="Enter City Name"
-   aria-label="Search"
- />
+   aria-label="Search"/>
+  {this.renderSuggestions()}
 
 <div className="search"></div>
 </form>
@@ -159,7 +169,13 @@ handleSubmit = e => {
             pageSize={this.state.pagination.itemsPerPage}
           />
 
-       {this.renderSuggestions()}
+       {
+            isLoading ? <Loader /> :
+            brewerys.filter(this.searchingFor(term)).map((brewery) => (
+      
+              <Brewery key={brewery.id} id={brewery.breweryId} brewery={brewery} />
+            ))
+       }
 
 <Pagination
             className={this.state.isLoading ? " hidden" : ""}
